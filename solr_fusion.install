@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install code for the solr_fusion feature.
+ */
+
+/**
+ * Fix query connector entity not install error on the status page.
+ */
+function solr_fusion_update_8001(&$sandbox) {
+  $type_manager = \Drupal::entityTypeManager();
+  $type_manager->clearCachedDefinitions();
+  $entity_type = $type_manager->getDefinition('solr_fusion_query_connector');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_type);
+  return t('Installed the solr_fusion_query_connector entity type');
+}

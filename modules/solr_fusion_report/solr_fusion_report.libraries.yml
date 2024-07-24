@@ -1,0 +1,5 @@
+solr-fusion-report-css-library:
+  header: true
+  css:
+    theme:
+      libraries/css/solr_fusion_report.css: {}

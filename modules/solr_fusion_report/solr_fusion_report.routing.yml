@@ -1,0 +1,9 @@
+solr_fusion_report_search.form:
+  path: '/admin/content/solr'
+  defaults:
+    _controller: '\Drupal\solr_fusion_report\Controller\SolrFusionSolrReportController::buildPage'
+    _title: 'Solr Fusion Report'
+  requirements:
+    _permission: 'access to solr report tab'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,41 @@
+solr_fusion_connector.list_action:
+  route_name: entity.solr_fusion_connector.collection
+  title: 'List Solr Server Connectors'
+  appears_on:
+    - entity.solr_fusion_connector.edit_form
+
+entity.solr_fusion_connector.add_form:
+  route_name: 'entity.solr_fusion_connector.add_form'
+  title: 'Add connector'
+  appears_on:
+    - entity.solr_fusion_connector.collection
+
+entity.solr_fusion_query_connector.add_form:
+  route_name: 'entity.solr_fusion_query_connector.add_form'
+  title: 'Add query connector'
+  appears_on:
+    - entity.solr_fusion_query_connector.collection
+
+entity.solr_fusion_query_parameter.add_form:
+  route_name: 'entity.solr_fusion_query_parameter.add_form'
+  title: 'Add a query parameter'
+  appears_on:
+    - entity.solr_fusion_query_parameter.collection
+
+entity.solr_fusion_facet.add_form:
+  route_name: 'entity.solr_fusion_facet.add_form'
+  title: 'Add a facet'
+  appears_on:
+    - entity.solr_fusion_facet.collection
+
+entity.solr_fusion_query.add_form:
+  route_name: 'entity.solr_fusion_query.add_form'
+  title: 'Add a query'
+  appears_on:
+    - entity.solr_fusion_query.collection
+
+solr_fusion.help.page.edit_form:
+  route_name: 'solr_fusion.help.page.edit_form'
+  title: 'Edit Help Text'
+  appears_on:
+    - solr_fusion.help.page

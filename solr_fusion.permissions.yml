@@ -1,0 +1,3 @@
+delete solr document:
+  title: 'Delete solr document'
+  description: 'Allows a user to delete a solr document.'

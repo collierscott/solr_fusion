@@ -1,0 +1,22 @@
+solr_fusion.customer_portal_settings:
+  type: config_object
+  label: 'Settings for Customer Portal'
+  mapping:
+    endpoint:
+      type: string
+      label: 'Customer portal endpoint domain'
+    path:
+      type: string
+      label: 'Path starting with the leading slash, ie /rs/search'
+    rows:
+      type: integer
+      label: 'Number or rows to return'
+    enableElevation:
+      type: boolean
+      label: 'To allow for elevated search'
+    additionalArguments:
+      type: string
+      label: 'Additional arguments ie fq=bundle:event&fq=taxonomy_region:en'
+    cta:
+      type: string
+      label: 'The see more link with ?q=[search string] appended to it'

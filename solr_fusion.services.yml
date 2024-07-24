@@ -1,0 +1,6 @@
+services:
+  solr_fusion.solr_service:
+    class: Drupal\solr_fusion\SolrFusionSolrService
+    arguments:
+      - '@config.factory'
+      - '@logger.factory'

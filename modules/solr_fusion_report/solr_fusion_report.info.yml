@@ -1,0 +1,9 @@
+name: 'Solr Fusion Report'
+type: module
+description: 'Solr Fusion Report module.'
+core_version_requirement: ^8.8 || ^9 || ^10
+package: 'SolrFusion'
+version: 8.x-1.0
+dependencies:
+  - drupal:jsonapi
+  - solr_fusion:solr_fusion

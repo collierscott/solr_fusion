@@ -1,0 +1,55 @@
+solr_fusion.settings:
+  route_name: solr_fusion.settings
+  title: 'Settings'
+  description: 'Global Settings'
+  base_route: solr_fusion.settings
+  weight: 0
+
+solr_fusion.recrawl_settings:
+  route_name: solr_fusion.recrawl_settings
+  title: 'Recrawl settings'
+  description: 'Lucidworks recrawl settings'
+  base_route: solr_fusion.settings
+  weight: 3
+
+entity.solr_fusion_query_parameters:
+  route_name: entity.solr_fusion_query_parameter.collection
+  title: 'Global Query Parameters'
+  description: 'Global Query Parameters'
+  base_route: solr_fusion.settings
+  weight: 5
+
+entity.solr_fusion_connectors:
+  route_name: entity.solr_fusion_connector.collection
+  title: 'Connectors'
+  description: 'Settings to connect with Solr or Fusion'
+  base_route: solr_fusion.settings
+  weight: 10
+
+entity.solr_fusion_query_connectors:
+  route_name: entity.solr_fusion_query_connector.collection
+  title: 'Query Connectors'
+  description: 'Settings to assign a connector to a query'
+  base_route: solr_fusion.settings
+  weight: 12
+
+entity.solr_fusion_facets:
+  route_name: entity.solr_fusion_facet.collection
+  title: 'Facets'
+  description: 'Facets available to use for queries'
+  base_route: solr_fusion.settings
+  weight: 20
+
+entity.solr_fusion_query:
+  route_name: entity.solr_fusion_query.collection
+  title: 'Queries'
+  description: 'Queries'
+  base_route: solr_fusion.settings
+  weight: 15
+
+solr_fusion.help.page:
+  title: 'Help'
+  route_name: solr_fusion.help.page
+  description: 'Help'
+  base_route: solr_fusion.settings
+  weight: 25

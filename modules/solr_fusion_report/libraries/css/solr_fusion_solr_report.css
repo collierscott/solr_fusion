@@ -1,0 +1,36 @@
+/**
+ * prevent main page content from scrolling when dialog is open
+ */
+body[data-no-scroll] {
+  overflow: hidden !important;
+}
+
+.solr-fusion-report-container {
+  margin-top: 20px;
+}
+
+.solr-fusion-report-listing-table-metrics {
+  float: right;
+  margin-right: 20px;
+}
+
+.solr-fusion-report-listing-table-filters {
+  float: left;
+  margin-top: 25px;
+  width: 200px;
+}
+
+.solr-fusion-report-listing-table-results-wrapper {
+  width: calc(100% - 210px);
+  float: left;
+  margin-left: 10px;
+}
+
+.solr-fusion-report-listing-form-wrapper {
+  margin-top: 20px;
+}
+
+.solr-fusion-report-listing-table-filters ul.facet-list {
+  list-style-type: none;
+  padding: 0;
+}

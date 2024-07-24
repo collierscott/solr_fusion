@@ -1,0 +1,57 @@
+solr_fusion.settings.menu:
+  title: 'Solr Fusion Settings'
+  description: 'Solr Fusion Configuration Settings'
+  route_name: solr_fusion.settings
+  parent: core.admin_config_system
+  weight: 25
+
+solr_fusion_connector.menu:
+  title: Solr Fusion Server Connector Settings
+  description: 'Server Connector Settings'
+  route_name: entity.solr_fusion_connector.collection
+  parent: solr_fusion.settings.menu
+  weight: 100
+
+solr_fusion_query_connector.menu:
+  title: Solr Fusion Query Server Connector Settings
+  description: 'Server Query Connector Settings'
+  route_name: entity.solr_fusion_query_connector.collection
+  parent: solr_fusion.settings.menu
+  weight: 100
+
+entity.solr_fusion_query_parameter.collection:
+  title: 'Solr Query Parameters'
+  route_name: entity.solr_fusion_query_parameter.collection
+  description: 'Configure Query Parameters.'
+  parent: solr_fusion.settings.menu
+
+entity.solr_fusion_facet.collection:
+  title: 'Facets'
+  route_name: entity.solr_fusion_facet.collection
+  description: 'Configure Facets.'
+  parent: solr_fusion.settings.menu
+
+entity.solr_fusion_query_connector.collection:
+  title: 'Query Connectors'
+  route_name: entity.solr_fusion_query_connector.collection
+  description: 'Configure Query Connections.'
+  parent: solr_fusion.settings.menu
+
+entity.solr_fusion_query.collection:
+  title: 'Queries'
+  route_name: entity.solr_fusion_query.collection
+  description: 'Configure Queries.'
+  parent: solr_fusion.settings.menu
+
+solr_fusion.help.page:
+  title: 'Help'
+  route_name: solr_fusion.help.page
+  description: 'Help'
+  parent: solr_fusion.settings.menu
+
+solr_fusion.remove.page:
+  title: 'Solr Fusion - Delete a Document'
+  route_name: solr_fusion.removal
+  description: 'Delete a document from solr index.'
+  parent: core.admin_config_system
+  weight: 28

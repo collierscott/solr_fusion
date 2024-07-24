@@ -1,0 +1,279 @@
+solr_fusion.help.page.edit_form:
+  path: '/admin/config/solr_fusion/help/edit'
+  defaults:
+    _form: '\Drupal\solr_fusion\Form\SolrFusionSolrHelpForm'
+    _title: Solr Fusion Help
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+solr_fusion.help.page:
+  path: '/admin/config/solr_fusion/help'
+  defaults:
+    _controller: '\Drupal\solr_fusion\Controller\SolrFusionSolrHelpController::help'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+solr_fusion.settings:
+  path: '/admin/config/solr_fusion'
+  defaults:
+    _form: '\Drupal\solr_fusion\Form\SolrFusionSolrSettingsForm'
+    _title: Solr Fusion Settings
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+solr_fusion.recrawl_settings:
+  path: '/admin/config/solr_fusion/recrawl_settings'
+  defaults:
+    _form: '\Drupal\solr_fusion\Form\SolrFusionSolrRecrawlSettingsForm'
+    _title: Recrawl settings for Lucidworks
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+entity.solr_fusion_connector.edit_form:
+  path: '/admin/config/solr_fusion/connector/{solr_fusion_connector}/edit'
+  defaults:
+    _entity_form: solr_fusion_connector.edit
+    _title: 'Edit Solr Server Connector'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_connector.delete_form:
+  path: '/admin/config/solr_fusion/connector/{solr_fusion_connector}/delete'
+  defaults:
+    _entity_form: solr_fusion_connector.delete
+    _title: 'Delete a Solr connector'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_connector.add_form:
+  path: '/admin/config/solr_fusion/connector/add'
+  defaults:
+    _entity_form: solr_fusion_connector.add
+    _title: 'Add Solr Server Connector'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_connector.collection:
+  path: '/admin/config/solr_fusion/connector'
+  defaults:
+    _entity_list: solr_fusion_connector
+    _title: 'Configure Server Connectors'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_connector.edit_form:
+  path: '/admin/config/solr_fusion/query_connector/{solr_fusion_query_connector}/edit'
+  defaults:
+    _entity_form: solr_fusion_query_connector.edit
+    _title: 'Edit Query Connector'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_connector.delete_form:
+  path: '/admin/config/solr_fusion/query_connector/{solr_fusion_query_connector}/delete'
+  defaults:
+    _entity_form: solr_fusion_query_connector.delete
+    _title: 'Delete a query connector'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_connector.add_form:
+  path: '/admin/config/solr_fusion/query_connector/add'
+  defaults:
+    _entity_form: solr_fusion_query_connector.add
+    _title: 'Add Query Connector'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_connector.collection:
+  path: '/admin/config/solr_fusion/query_connector'
+  defaults:
+    _entity_list: solr_fusion_query_connector
+    _title: 'Configure Server Query Connectors'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_parameter.edit_form:
+  path: '/admin/config/solr_fusion/parameters/{solr_fusion_query_parameter}/edit'
+  defaults:
+    _entity_form: solr_fusion_query_parameter.edit
+    _title: 'Edit a query parameter'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_parameter.delete_form:
+  path: '/admin/config/solr_fusion/parameters/{solr_fusion_query_parameter}/delete'
+  defaults:
+    _entity_form: solr_fusion_query_parameter.delete
+    _title: 'Delete a query parameter'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_parameter.add_form:
+  path: '/admin/config/solr_fusion/parameters/add'
+  defaults:
+    _entity_form: solr_fusion_query_parameter.add
+    _title: 'Add a query parameter'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query_parameter.collection:
+  path: '/admin/config/solr_fusion/parameters'
+  defaults:
+    _entity_list: solr_fusion_query_parameter
+    _title: 'Global Query Parameters'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_facet.edit_form:
+  path: '/admin/config/solr_fusion/facets/{solr_fusion_facet}/edit'
+  defaults:
+    _entity_form: solr_fusion_facet.edit
+    _title: 'Edit a facet'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_facet.delete_form:
+  path: '/admin/config/solr_fusion/facets/{solr_fusion_facet}/delete'
+  defaults:
+    _entity_form: solr_fusion_facet.delete
+    _title: 'Delete a facet'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_facet.add_form:
+  path: '/admin/config/solr_fusion/facets/add'
+  defaults:
+    _entity_form: solr_fusion_facet.add
+    _title: 'Add a facet'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_facet.collection:
+  path: '/admin/config/solr_fusion/facets'
+  defaults:
+    _entity_list: solr_fusion_facet
+    _title: 'Manage Facets'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query.edit_form:
+  path: '/admin/config/solr_fusion/solr_queries/{solr_fusion_query}/edit'
+  defaults:
+    _entity_form: solr_fusion_query.edit
+    _title: 'Edit a query'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query.delete_form:
+  path: '/admin/config/solr_fusion/solr_queries/{solr_fusion_query}/delete'
+  defaults:
+    _entity_form: solr_fusion_query.delete
+    _title: 'Delete a query'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query.add_form:
+  path: '/admin/config/solr_fusion/solr_queries/add'
+  defaults:
+    _entity_form: solr_fusion_query.add
+    _title: 'Add a query'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+entity.solr_fusion_query.collection:
+  path: '/admin/config/solr_fusion/queries'
+  defaults:
+    _entity_list: solr_fusion_query
+    _title: 'Configure Queries'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'TRUE'
+
+solr_fusion.solr_fusion_search:
+  path: '/jsonapi/solr_search/{query_id}'
+  defaults:
+    _controller: '\Drupal\solr_fusion\Controller\SolrFusionSolrController::search'
+    _disable_route_normalizer: 'TRUE'
+    path_name: 'search'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+solr_fusion.signals:
+  path: '/jsonapi/lw_signals'
+  defaults:
+    _title: 'Solr Fusion Listing Signals'
+    _controller: '\Drupal\solr_fusion\Controller\SolrFusionSolrSignalsController::handleRequest'
+    _disable_route_normalizer: 'TRUE'
+    path_name: 'solr_fusion_signals'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+solr_fusion.suggestion:
+  path: '/jsonapi/suggestion'
+  defaults:
+    _controller: '\Drupal\solr_fusion\Controller\SolrFusionSolrSuggestionController::search'
+    _disable_route_normalizer: 'TRUE'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+solr_fusion.removal:
+  path: '/admin/config/solr_fusion/remove-page'
+  defaults:
+    _form: '\Drupal\solr_fusion\Form\SolrFusionSolrRemovePageForm'
+    _title: Delete a document from solr index.
+  requirements:
+    _permission: 'delete solr document'
+  options:
+    _admin_route: 'TRUE'

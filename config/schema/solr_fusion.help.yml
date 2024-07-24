@@ -1,0 +1,7 @@
+solr_fusion.help:
+  type: config_object
+  label: 'Help for Solr Fusion'
+  mapping:
+    help_txt:
+      type: text_format
+      label: 'Help'

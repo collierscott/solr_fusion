@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains solr_fusion_report module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function solr_fusion_report_theme($existing, $type, $theme, $path): array {
+  return [
+    'solr_fusion_report__search' => [
+      'variables' => [
+        'content' => '',
+      ],
+    ],
+  ];
+}

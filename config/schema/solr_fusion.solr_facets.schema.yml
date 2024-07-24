@@ -1,0 +1,22 @@
+solr_fusion.solr_facet.*:
+  type: config_entity
+  label: 'Facet Configuration'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Name'
+    service:
+      type: string
+      label: 'Connector Service'
+    field:
+      type: string
+      label: 'Field'
+    min_count:
+      type: integer
+      label: 'MinCount'
+    limit:
+      type: integer
+      label: 'Limit'

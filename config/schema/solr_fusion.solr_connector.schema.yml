@@ -1,0 +1,55 @@
+solr_fusion.solr_connector.*:
+  type: config_entity
+  label: 'Solr Fusion Connector Settings'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: string
+      label: 'The name of the connector'
+    scheme:
+      type: string
+      label: 'The HTTP protocol to use for sending queries'
+    host:
+      type: string
+      label: 'The host name or IP of the server'
+    port:
+      type: integer
+      label: 'The port of the server'
+    path:
+      type: string
+      label: 'The path of the server'
+    signals_path:
+      type: string
+      label: 'The path of the signals server'
+    collection:
+      type: string
+      label: 'The collection of the server'
+    service:
+      type: string
+      label: 'The service'
+    app:
+      type: string
+      label: 'The name that identifies the app to use on fusion to use on the server'
+    username:
+      type: string
+      label: 'The username'
+    password:
+      type: string
+      label: 'The password'
+    core:
+      type: string
+      label: 'The name that identifies the Solr core or Fusion pipeline to use on the server'
+    timeout:
+      type: integer
+      label: 'Timeout for search queries'
+    index_timeout:
+      type: integer
+      label: 'Timeout for indexing requests'
+    optimize_timeout:
+      type: integer
+      label: 'Timeout for optimize requests'
+    finalize_timeout:
+      type: integer
+      label: 'Timeout for finalize requests'

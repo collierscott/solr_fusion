@@ -1,0 +1,5 @@
+solr_fusion_report_search.admin_content:
+  route_name: solr_fusion_report_search.form
+  title: 'Solr'
+  base_route: system.admin_content
+  weight: 100

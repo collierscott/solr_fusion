@@ -1,0 +1,16 @@
+solr_fusion.solr_query_connector.*:
+  type: config_entity
+  label: 'Solr Fusion Query Connector Settings'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: string
+      label: 'The name of the connector'
+    connector:
+      type: string
+      label: 'The connector to use'
+    query:
+      type: string
+      label: 'The query to use'

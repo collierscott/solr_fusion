@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Contains solr_fusion module.
+ */
+
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function solr_fusion_help($route_name, RouteMatchInterface $route_match) {
+
+  if ($route_name && $route_name == 'help.page.solr_fusion') {
+    // Main module help for the solr_fusion module.
+    $output = '';
+    $output .= '<h3>' . t('About') . '</h3>';
+    $output .= '<p>' . t('Solr Fusion.') . '</p>';
+    return $output;
+  }
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function solr_fusion_node_update(NodeInterface $node) {
+  _solr_fusion_node_reindex($node, 'update');
+}
+
+/**
+ * Re-index a node in lucidworks.
+ *
+ * @param Drupal\node\NodeInterface $node
+ *   The node interface.
+ */
+function _solr_fusion_node_reindex(NodeInterface $node, $hook): void {
+  $enabled = \Drupal::config('solr_fusion.recrawl_settings')->get('enabled');
+  if (empty($enabled)) {
+    return;
+  }
+  $has_ran = &drupal_static(__FUNCTION__ . '__has_ran', FALSE);
+  $seeder_page_content_types = &drupal_static(__FUNCTION__, []);
+  if (!$seeder_page_content_types) {
+    $seeder_page_content_types = \Drupal::config('seeder.settings')->get('content_types');
+  }
+
+  $allowed_hooks = [
+    'predelete',
+    'translation_delete',
+  ];
+
+  $moderation_state = $node->hasField('moderation_state')
+    ? $node->get('moderation_state')->value
+    : '';
+  if (($node->isPublished()
+    // Content that is archived or translation that has been created or
+    // removed being in published.
+    || $moderation_state === 'archived')
+    || in_array($hook, $allowed_hooks)
+    // If the content type is part of the seeder page we used for crawling we
+    // want to update that value.
+    && $seeder_page_content_types
+    && in_array($node->bundle(), $seeder_page_content_types)) {
+    // Get the path alias url from the content.
+    $path = $node->toUrl()->toString();
+    if ($node->get('langcode')->value === LanguageInterface::LANGCODE_NOT_SPECIFIED && !str_starts_with($path, '/en/')) {
+      // Set the language back to English by default if language is undefined.
+      $path = '/en' . $path;
+    }
+    // Hooks can get trigger multiple time for example, when a translation is
+    // deleted, it runs the hook_ENTITY_TYPE_translation_delete and afterwards,
+    // it triggers the hook_ENTITY_TYPE_update().  At this point the node object
+    // is the original English node the second time around so we only want the
+    // translation node is currently getting deleted.
+    if (!$has_ran) {
+      // Add item to queue.
+      $job = [
+        'path' => $path,
+        'hook' => $hook,
+        'moderation_state' => $moderation_state,
+        'status' => $node->isPublished(),
+        'bundle' => $node->bundle(),
+        'user' => \Drupal::currentUser()->getAccountName(),
+      ];
+      \Drupal::queue('lucidworks_job')->createItem($job);
+      $has_ran = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete().
+ */
+function solr_fusion_node_predelete(NodeInterface $node) {
+  // Use the predelete hook so that we can still get the path alias.
+  _solr_fusion_node_reindex($node, 'predelete');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_translation_delete().
+ */
+function solr_fusion_node_translation_delete(NodeInterface $node) {
+  _solr_fusion_node_reindex($node, 'translation_delete');
+}

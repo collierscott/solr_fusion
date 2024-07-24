@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Tab for solr fusion report.
+ */
+#}
+{{ attach_library('solr_fusion_report/solr-fusion-report-css-library') }}
+<div class="solr-fusion-report-wrapper">
+  <div class="solr-fusion-report-search-form">
+    <div class="solr-fusion-report-container">
+      <ul>
+        <li>
+          The search field allows you to search by keyword, "string of text", or a URL (formatted as https://www.solr-fusion.com/en/example) across solr-fusion.com and external properties.
+        </li>
+        <li>
+          Use the filters on the left side to refine your search. This search does include some properties outside solr-fusion.com. The filter "Source site: solr_fusion_drupal" will limit your search to only Drupal based solr-fusion.com content.
+        </li>
+        <li>
+          The "Export Results" button will export your search results into a CSV file which will then be available for download.
+        </li>
+      </ul>
+    </div>
+    <div class="solr-fusion-report-container">
+        {{ content.search_form }}
+    </div>
+  </div>
+  <div class="solr-fusion-report-listing-form-wrapper">
+    <div class="solr-fusion-report-container">
+        {{ content.results_form }}
+    </div>
+  </div>
+</div>
+{{ attach_library('solr_fusion_report/solr-fusion-report-js-library') }}

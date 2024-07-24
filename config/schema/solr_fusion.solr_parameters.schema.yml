@@ -1,0 +1,16 @@
+solr_fusion.solr_query_parameter.*:
+  type: config_entity
+  label: 'Solr Query Parameters'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Name'
+    service:
+      type: string
+      label: 'Service'
+    value:
+      type: string
+      label: 'Value'

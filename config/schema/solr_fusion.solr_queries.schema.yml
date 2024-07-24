@@ -1,0 +1,34 @@
+solr_fusion.solr_query.*:
+  type: config_entity
+  label: 'Solr Query Configuration'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Name'
+    sort:
+      type: string
+      label: 'Sort'
+    boost_field:
+      type: string
+      label: 'Boost Field'
+    field_list:
+      type: string
+      label: 'Field List'
+    facet_list:
+      type: string
+      label: 'Facet List'
+    filter_query_list:
+      type: string
+      label: 'Filter Query List'
+    query_field_list:
+      type: string
+      label: 'Query Field List'
+    bundle:
+      type: string
+      label: 'Bundle'
+    renamed_facet_field:
+      type: string
+      label: 'Renamed facet field'

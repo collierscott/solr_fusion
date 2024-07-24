@@ -1,0 +1,9 @@
+name: 'Solr Fusion'
+type: module
+description: 'Solr Fusion module.'
+core_version_requirement: ^8.8 || ^9 || ^10
+package: 'SolrFusion'
+version: 8.x-1.0
+configure: entity.solr_fusion_connector.collection
+dependencies:
+  - drupal:jsonapi
